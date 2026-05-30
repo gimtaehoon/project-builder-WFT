@@ -908,18 +908,18 @@
           </ul>
         </div>
 
-        <form class="consult-form">
+        <form class="consult-form" action="https://formspree.io/f/mvzywzrk" method="POST">
           <div class="field">
             <label for="company">회사명</label>
-            <input id="company" name="company" type="text" placeholder="예: 우리회사" autocomplete="organization">
+            <input id="company" name="company" type="text" placeholder="예: 우리회사" autocomplete="organization" required>
           </div>
           <div class="field">
             <label for="manager">담당자명</label>
-            <input id="manager" name="manager" type="text" placeholder="예: 김대표" autocomplete="name">
+            <input id="manager" name="manager" type="text" placeholder="예: 김대표" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="phone">연락처</label>
-            <input id="phone" name="phone" type="tel" placeholder="예: 010-0000-0000" autocomplete="tel">
+            <input id="phone" name="phone" type="tel" placeholder="예: 010-0000-0000" autocomplete="tel" required>
           </div>
           <div class="field">
             <label for="revenue">연매출</label>
@@ -933,6 +933,7 @@
             <label for="message">문의 내용</label>
             <textarea id="message" name="message" placeholder="현재 필요한 업무나 상담받고 싶은 내용을 적어주세요."></textarea>
           </div>
+          <input type="hidden" name="_subject" value="우리회사재무팀 상담 신청">
           <div class="field full">
             <button class="submit-btn" type="submit">무료 상담 신청</button>
           </div>
@@ -951,9 +952,36 @@
       }
     });
 
-    document.querySelector('.consult-form').addEventListener('submit', function (event) {
+    document.querySelector('.consult-form').addEventListener('submit', async function (event) {
       event.preventDefault();
-      alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
+      const form = event.currentTarget;
+      const submitButton = form.querySelector('.submit-btn');
+      const originalText = submitButton.textContent;
+
+      submitButton.disabled = true;
+      submitButton.textContent = '접수 중입니다';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Formspree submission failed');
+        }
+
+        form.reset();
+        alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
+      } catch (error) {
+        alert('상담 신청 전송에 실패했습니다. 잠시 후 다시 시도해주세요.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
     });
   </script>
 </body>
