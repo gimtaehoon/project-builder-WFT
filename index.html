@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>우리회사재무팀 | 구독형 재무 관리 서비스</title>
+  <title>우리회사재무팀 | 구독형 재무팀 비용 비교</title>
   <style>
     :root {
-      --navy-950: #07111f;
-      --navy-900: #0b1b33;
-      --navy-800: #122b4d;
-      --blue-700: #1d5fd7;
-      --blue-600: #2878f0;
-      --blue-500: #4594ff;
-      --sky-100: #edf6ff;
-      --sky-50: #f7fbff;
-      --gray-900: #111827;
-      --gray-700: #374151;
-      --gray-500: #6b7280;
-      --gray-300: #d8e0ea;
-      --gray-200: #e8edf4;
-      --gray-100: #f3f6fa;
+      --ink: #0b1220;
+      --navy: #101b34;
+      --blue: #2563eb;
+      --blue-soft: #edf4ff;
+      --line: #e5ebf3;
+      --line-strong: #cfd9e8;
+      --muted: #677386;
+      --subtle: #f6f9fd;
       --white: #ffffff;
-      --amber-600: #d97706;
-      --green-500: #10a37f;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
-      --shadow-card: 0 28px 80px rgba(15, 23, 42, 0.12);
-      --shadow-blue: 0 30px 80px rgba(29, 95, 215, 0.22);
-      --radius-lg: 28px;
-      --radius-md: 18px;
+      --amber: #c77812;
+      --green: #0f9f7a;
+      --shadow: 0 26px 80px rgba(15, 23, 42, 0.10);
+      --shadow-soft: 0 18px 44px rgba(15, 23, 42, 0.06);
+      --shadow-blue: 0 30px 90px rgba(37, 99, 235, 0.16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
     }
 
     * {
@@ -40,12 +35,13 @@
 
     body {
       margin: 0;
-      color: var(--gray-900);
-      background: var(--white);
+      color: var(--ink);
+      background: #fbfdff;
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       line-height: 1.55;
       letter-spacing: 0;
       word-break: keep-all;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -65,32 +61,31 @@
     }
 
     .container {
-      width: min(1160px, calc(100% - 44px));
+      width: min(1180px, calc(100% - 56px));
       margin: 0 auto;
     }
 
     .nav {
       position: sticky;
       top: 0;
-      z-index: 40;
-      border-bottom: 1px solid rgba(216, 224, 234, 0.72);
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(20px);
+      z-index: 50;
+      border-bottom: 1px solid rgba(229, 235, 243, 0.72);
+      background: rgba(251, 253, 255, 0.84);
+      backdrop-filter: blur(22px);
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 84px;
-      gap: 24px;
+      min-height: 92px;
     }
 
     .logo {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      color: var(--navy-950);
+      gap: 13px;
+      color: var(--ink);
       font-size: 21px;
       font-weight: 850;
       white-space: nowrap;
@@ -99,15 +94,12 @@
     .logo-mark {
       display: grid;
       place-items: center;
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.42);
-      border-radius: 14px;
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
       color: var(--white);
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
-        linear-gradient(135deg, var(--navy-900), var(--blue-600));
-      box-shadow: 0 16px 34px rgba(29, 95, 215, 0.22);
+      background: linear-gradient(145deg, #0f1f3c, #2767e8);
+      box-shadow: 0 20px 42px rgba(37, 99, 235, 0.20);
       font-size: 15px;
       font-weight: 950;
     }
@@ -118,36 +110,33 @@
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      border-radius: 14px;
+      border-radius: 999px;
       color: var(--white);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0)),
-        linear-gradient(135deg, var(--navy-900), var(--blue-700));
-      box-shadow: 0 18px 38px rgba(11, 27, 51, 0.2);
+      background: linear-gradient(135deg, #111c33, #2459cf);
+      box-shadow: 0 20px 44px rgba(16, 27, 52, 0.18);
       font-weight: 820;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
       white-space: nowrap;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
 
     .nav-cta {
-      padding: 0 22px;
+      padding: 0 23px;
       font-size: 15px;
     }
 
     .nav-cta:hover,
     .submit-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 22px 48px rgba(29, 95, 215, 0.26);
+      box-shadow: 0 24px 54px rgba(37, 99, 235, 0.24);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      padding: 76px 0 58px;
+      padding: 104px 0 74px;
       background:
-        radial-gradient(circle at 20% 8%, rgba(40, 120, 240, 0.12), transparent 30%),
-        radial-gradient(circle at 82% 18%, rgba(69, 148, 255, 0.14), transparent 28%),
-        linear-gradient(180deg, #f8fbff 0%, #ffffff 78%);
+        radial-gradient(circle at 50% -8%, rgba(37, 99, 235, 0.12), transparent 36%),
+        linear-gradient(180deg, #fbfdff 0%, #ffffff 72%, #f8fbff 100%);
     }
 
     .hero::before {
@@ -156,10 +145,10 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(18, 43, 77, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(18, 43, 77, 0.045) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+        linear-gradient(rgba(16, 27, 52, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 27, 52, 0.035) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 62%);
     }
 
     .hero-inner {
@@ -168,17 +157,35 @@
     }
 
     .hero-copy {
-      max-width: 780px;
-      margin: 0 auto 38px;
+      max-width: 1080px;
+      margin: 0 auto 54px;
       text-align: center;
+      animation: rise 0.58s ease both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      margin-bottom: 26px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #36506f;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+      font-size: 14px;
+      font-weight: 760;
     }
 
     h1 {
       margin: 0;
-      color: var(--navy-950);
-      font-size: clamp(40px, 4.4vw, 64px);
-      line-height: 1.06;
-      font-weight: 920;
+      color: var(--ink);
+      font-size: clamp(52px, 6vw, 86px);
+      line-height: 1.02;
+      font-weight: 930;
+      letter-spacing: 0;
     }
 
     .title-line {
@@ -187,19 +194,20 @@
     }
 
     .hero-note {
-      margin: 18px auto 0;
-      color: var(--gray-500);
-      font-size: clamp(17px, 2vw, 20px);
+      max-width: 680px;
+      margin: 28px auto 0;
+      color: var(--muted);
+      font-size: 19px;
       font-weight: 560;
     }
 
-    .comparison-wrap {
+    .comparison {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
-      gap: 26px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      gap: 30px;
       align-items: stretch;
-      margin-top: 30px;
+      animation: rise 0.62s 0.08s ease both;
     }
 
     .vs-badge {
@@ -209,175 +217,121 @@
       z-index: 5;
       display: grid;
       place-items: center;
-      width: 72px;
-      height: 72px;
-      border: 1px solid rgba(255, 255, 255, 0.88);
+      width: 64px;
+      height: 64px;
+      border: 1px solid rgba(207, 217, 232, 0.92);
       border-radius: 999px;
-      color: var(--navy-900);
-      background:
-        linear-gradient(#ffffff, #ffffff) padding-box,
-        linear-gradient(135deg, rgba(29, 95, 215, 0.16), rgba(16, 163, 127, 0.22)) border-box;
-      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.14);
+      color: #536176;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
       transform: translate(-50%, -50%);
-      font-size: 17px;
-      font-weight: 950;
-      letter-spacing: 0;
+      font-size: 14px;
+      font-weight: 920;
     }
 
     .compare-card {
-      position: relative;
       display: flex;
       flex-direction: column;
       min-height: 560px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: var(--shadow-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow);
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
-    .compare-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-    }
-
-    .hire {
-      border: 1px solid rgba(216, 224, 234, 0.96);
-    }
-
-    .hire::after {
-      border: 1px solid rgba(217, 119, 6, 0.08);
+    .compare-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 34px 100px rgba(15, 23, 42, 0.14);
     }
 
     .subscription {
-      border: 1px solid rgba(29, 95, 215, 0.28);
+      border-color: rgba(37, 99, 235, 0.24);
       box-shadow: var(--shadow-blue);
-      transform: translateY(-8px);
     }
 
-    .subscription::after {
-      border: 1px solid rgba(69, 148, 255, 0.18);
+    .subscription:hover {
+      box-shadow: 0 38px 110px rgba(37, 99, 235, 0.22);
     }
 
     .card-head {
-      padding: 34px 34px 26px;
-      border-bottom: 1px solid rgba(216, 224, 234, 0.66);
-    }
-
-    .card-topline {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 24px;
+      padding: 38px 38px 30px;
+      border-bottom: 1px solid var(--line);
     }
 
     .card-label {
       display: inline-flex;
       align-items: center;
-      height: 34px;
-      padding: 0 13px;
+      min-height: 34px;
+      margin-bottom: 26px;
+      padding: 0 14px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 850;
     }
 
     .hire .card-label {
-      color: #9a5b05;
-      background: #fff7ed;
+      color: #85520d;
+      background: #fff8ee;
     }
 
     .subscription .card-label {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
-      box-shadow: 0 12px 28px rgba(29, 95, 215, 0.22);
-    }
-
-    .card-caption {
-      color: var(--gray-500);
-      font-size: 14px;
-      font-weight: 720;
+      color: var(--blue);
+      background: var(--blue-soft);
     }
 
     .card-title {
-      margin: 0 0 20px;
-      color: var(--navy-950);
-      font-size: 26px;
-      line-height: 1.25;
+      margin: 0 0 22px;
+      color: var(--ink);
+      font-size: 29px;
+      line-height: 1.24;
       font-weight: 900;
     }
 
     .metric {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      display: grid;
+      gap: 12px;
     }
 
     .metric-sub {
-      color: var(--gray-500);
+      color: var(--muted);
       font-size: 16px;
-      font-weight: 760;
+      font-weight: 720;
     }
 
     .metric-main {
       display: flex;
       align-items: flex-end;
       gap: 8px;
-      color: var(--navy-950);
       line-height: 0.95;
     }
 
     .metric-prefix,
     .metric-unit {
-      padding-bottom: 8px;
-      color: var(--navy-900);
-      font-size: clamp(20px, 2vw, 26px);
+      padding-bottom: 9px;
+      color: var(--navy);
+      font-size: clamp(22px, 2vw, 28px);
       font-weight: 900;
     }
 
     .metric-number {
-      font-size: clamp(54px, 6vw, 76px);
+      font-size: clamp(58px, 6vw, 82px);
       font-weight: 950;
       letter-spacing: 0;
     }
 
     .hire .metric-number {
-      color: var(--amber-600);
+      color: var(--amber);
     }
 
     .subscription .metric-number {
-      color: var(--blue-700);
-    }
-
-    .metric-line {
-      height: 10px;
-      margin-top: 24px;
-      border-radius: 999px;
-      background: var(--gray-100);
-      overflow: hidden;
-    }
-
-    .metric-line span {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-    }
-
-    .hire .metric-line span {
-      width: 100%;
-      background: linear-gradient(90deg, #fed7aa, var(--amber-600));
-    }
-
-    .subscription .metric-line span {
-      width: 52%;
-      background: linear-gradient(90deg, var(--green-500), var(--blue-500));
+      color: var(--blue);
     }
 
     .card-body {
       flex: 1;
-      padding: 28px 34px 34px;
+      padding: 30px 38px 38px;
     }
 
     .feature-list {
@@ -390,219 +344,216 @@
 
     .feature-list li {
       display: grid;
-      grid-template-columns: 25px minmax(0, 1fr);
+      grid-template-columns: 24px minmax(0, 1fr);
       gap: 12px;
       align-items: start;
-      color: var(--gray-700);
+      color: #344155;
       font-size: 16px;
-      line-height: 1.45;
-      font-weight: 650;
+      line-height: 1.46;
+      font-weight: 660;
     }
 
     .check {
       display: grid;
       place-items: center;
-      width: 25px;
-      height: 25px;
-      border-radius: 9px;
-      font-size: 14px;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      font-size: 13px;
       line-height: 1;
-      font-weight: 950;
+      font-weight: 900;
     }
 
     .hire .check {
-      color: #9a5b05;
-      background: #fff7ed;
+      color: #85520d;
+      background: #fff8ee;
     }
 
     .subscription .check {
-      color: var(--blue-700);
-      background: #eaf4ff;
+      color: var(--blue);
+      background: var(--blue-soft);
     }
 
-    .saving-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 26px auto 0;
-      padding: 14px 18px;
+    .saving-line {
       width: fit-content;
       max-width: 100%;
-      border: 1px solid rgba(29, 95, 215, 0.16);
+      margin: 30px auto 0;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      color: var(--navy-900);
-      background: rgba(255, 255, 255, 0.76);
+      color: #46546a;
+      background: rgba(255, 255, 255, 0.74);
       box-shadow: var(--shadow-soft);
       font-size: 15px;
-      font-weight: 780;
+      font-weight: 700;
       text-align: center;
+      animation: rise 0.62s 0.16s ease both;
     }
 
-    .saving-strip strong {
-      color: var(--blue-700);
-      font-weight: 930;
+    .saving-line strong {
+      color: var(--blue);
+      font-weight: 920;
     }
 
     .trust {
-      padding: 28px 0 78px;
+      padding: 54px 0 104px;
       background: #ffffff;
     }
 
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
 
     .trust-item {
-      min-height: 142px;
-      padding: 22px;
-      border: 1px solid rgba(216, 224, 234, 0.9);
-      border-radius: 22px;
-      background: linear-gradient(180deg, #ffffff, #fbfdff);
+      min-height: 148px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #ffffff;
       box-shadow: var(--shadow-soft);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
     }
 
-    .trust-icon {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 18px;
-      border-radius: 14px;
-      color: var(--blue-700);
-      background: var(--sky-100);
-      font-size: 18px;
-      font-weight: 950;
+    .trust-item:hover,
+    .work-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(15, 23, 42, 0.10);
+    }
+
+    .trust-index {
+      display: block;
+      margin-bottom: 26px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
     }
 
     .trust-item strong {
       display: block;
-      color: var(--navy-950);
-      font-size: 17px;
-      line-height: 1.36;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.35;
       font-weight: 900;
     }
 
     .work {
-      padding: 76px 0;
-      background: var(--sky-50);
-      border-top: 1px solid var(--gray-200);
-      border-bottom: 1px solid var(--gray-200);
+      padding: 114px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--subtle);
     }
 
     .section-head {
-      max-width: 760px;
-      margin: 0 auto 28px;
+      max-width: 820px;
+      margin: 0 auto 44px;
       text-align: center;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
     }
 
     .section-head h2 {
       margin: 0;
-      color: var(--navy-950);
-      font-size: clamp(30px, 3.6vw, 46px);
-      line-height: 1.18;
-      font-weight: 920;
+      color: var(--ink);
+      font-size: clamp(36px, 4.5vw, 60px);
+      line-height: 1.08;
+      font-weight: 930;
     }
 
     .section-head p {
-      margin: 14px 0 0;
-      color: var(--gray-500);
-      font-size: 17px;
+      margin: 18px auto 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
       font-weight: 560;
     }
 
     .work-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
+      gap: 16px;
     }
 
     .work-item {
       display: flex;
-      align-items: center;
-      min-height: 74px;
-      padding: 16px 18px;
-      border: 1px solid rgba(216, 224, 234, 0.9);
-      border-radius: 16px;
-      color: var(--gray-700);
-      background: var(--white);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
-      font-size: 15px;
+      align-items: flex-end;
+      min-height: 142px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      color: #263448;
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      font-size: 16px;
       line-height: 1.42;
-      font-weight: 760;
+      font-weight: 820;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .work-item:hover {
+      border-color: var(--line-strong);
     }
 
     .consult {
-      padding: 86px 0;
+      padding: 118px 0;
       background:
-        radial-gradient(circle at 12% 16%, rgba(40, 120, 240, 0.12), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+        radial-gradient(circle at 82% 12%, rgba(37, 99, 235, 0.08), transparent 32%),
+        #ffffff;
     }
 
     .consult-panel {
       display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
-      gap: 34px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 54px;
       align-items: start;
-      padding: 40px;
-      border: 1px solid rgba(216, 224, 234, 0.88);
-      border-radius: 30px;
+      padding: 52px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
       background: rgba(255, 255, 255, 0.92);
-      box-shadow: var(--shadow-card);
-      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
     }
 
     .consult-copy h2 {
       margin: 0;
-      color: var(--navy-950);
-      font-size: clamp(30px, 3.4vw, 46px);
-      line-height: 1.18;
-      font-weight: 920;
+      color: var(--ink);
+      font-size: clamp(36px, 4.3vw, 60px);
+      line-height: 1.08;
+      font-weight: 930;
     }
 
     .consult-copy p {
-      margin: 16px 0 0;
-      color: var(--gray-500);
-      font-size: 17px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 18px;
       font-weight: 560;
     }
 
-    .consult-points {
+    .consult-meta {
       display: grid;
       gap: 12px;
-      margin: 28px 0 0;
+      margin-top: 36px;
       padding: 0;
       list-style: none;
     }
 
-    .consult-points li {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      color: var(--gray-700);
+    .consult-meta li {
+      color: #334155;
       font-size: 15px;
       font-weight: 760;
-    }
-
-    .consult-points span {
-      display: grid;
-      place-items: center;
-      width: 23px;
-      height: 23px;
-      border-radius: 8px;
-      color: var(--blue-700);
-      background: var(--sky-100);
-      font-size: 13px;
-      font-weight: 950;
-      flex: 0 0 auto;
     }
 
     .consult-form {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 15px;
     }
 
     .field {
@@ -615,7 +566,7 @@
     }
 
     label {
-      color: var(--navy-900);
+      color: var(--navy);
       font-size: 13px;
       font-weight: 820;
     }
@@ -623,63 +574,71 @@
     input,
     textarea {
       width: 100%;
-      border: 1px solid var(--gray-300);
-      border-radius: 15px;
-      color: var(--gray-900);
+      border: 1px solid var(--line-strong);
+      border-radius: 17px;
+      color: var(--ink);
       background: #ffffff;
       outline: none;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+      transition: border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
     input {
-      height: 52px;
-      padding: 0 15px;
+      height: 56px;
+      padding: 0 16px;
     }
 
     textarea {
-      min-height: 118px;
-      padding: 14px 15px;
+      min-height: 132px;
+      padding: 15px 16px;
       resize: vertical;
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: #9aa6b5;
+      color: #9aa7b8;
     }
 
     input:focus,
     textarea:focus {
-      border-color: var(--blue-500);
-      box-shadow: 0 0 0 4px rgba(69, 148, 255, 0.14);
+      border-color: rgba(37, 99, 235, 0.66);
+      box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.10);
     }
 
     .submit-btn {
       width: 100%;
-      min-height: 56px;
+      min-height: 58px;
       font-size: 16px;
     }
 
     .form-note {
       margin: 0;
-      color: var(--gray-500);
+      color: var(--muted);
       font-size: 13px;
       text-align: center;
     }
 
-    @media (max-width: 960px) {
-      .comparison-wrap {
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .comparison,
+      .consult-panel {
         grid-template-columns: 1fr;
-        gap: 24px;
       }
 
       .vs-badge {
-        top: 50%;
-        left: 50%;
-        width: 66px;
-        height: 66px;
-      }
-
-      .subscription {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: -2px auto;
         transform: none;
       }
 
@@ -687,50 +646,49 @@
       .work-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-
-      .consult-panel {
-        grid-template-columns: 1fr;
-      }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 680px) {
       .container {
-        width: min(100% - 28px, 1160px);
+        width: min(100% - 30px, 1180px);
       }
 
       .nav-inner {
-        min-height: 70px;
+        min-height: 74px;
       }
 
       .logo {
-        gap: 9px;
+        gap: 10px;
         font-size: 18px;
       }
 
       .logo-mark {
-        width: 34px;
-        height: 34px;
-        border-radius: 11px;
+        width: 35px;
+        height: 35px;
+        border-radius: 12px;
       }
 
       .nav-cta {
         min-height: 42px;
-        padding: 0 14px;
-        border-radius: 12px;
+        padding: 0 15px;
         font-size: 14px;
       }
 
       .hero {
-        padding: 52px 0 42px;
+        padding: 66px 0 50px;
       }
 
       .hero-copy {
-        margin-bottom: 26px;
+        margin-bottom: 36px;
         text-align: left;
       }
 
+      .eyebrow {
+        margin-bottom: 18px;
+      }
+
       h1 {
-        font-size: 38px;
+        font-size: 42px;
       }
 
       .title-line {
@@ -738,48 +696,31 @@
       }
 
       .hero-note {
+        margin-left: 0;
         font-size: 16px;
       }
 
-      .comparison-wrap {
+      .comparison {
         gap: 18px;
-      }
-
-      .vs-badge {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: -4px auto;
-        transform: none;
       }
 
       .compare-card {
         min-height: auto;
-        border-radius: 24px;
+        border-radius: 26px;
       }
 
       .card-head,
       .card-body {
-        padding-left: 22px;
-        padding-right: 22px;
-      }
-
-      .card-topline {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
+        padding-left: 24px;
+        padding-right: 24px;
       }
 
       .card-title {
-        font-size: 23px;
+        font-size: 24px;
       }
 
       .metric-main {
         gap: 6px;
-      }
-
-      .metric-number {
-        font-size: 54px;
       }
 
       .metric-prefix,
@@ -788,14 +729,17 @@
         padding-bottom: 7px;
       }
 
-      .saving-strip {
+      .metric-number {
+        font-size: 54px;
+      }
+
+      .saving-line {
         width: 100%;
         border-radius: 18px;
-        flex-direction: column;
       }
 
       .trust {
-        padding-bottom: 52px;
+        padding: 40px 0 76px;
       }
 
       .trust-grid,
@@ -806,7 +750,7 @@
 
       .work,
       .consult {
-        padding: 58px 0;
+        padding: 78px 0;
       }
 
       .section-head,
@@ -814,9 +758,14 @@
         text-align: left;
       }
 
+      .work-item {
+        min-height: 104px;
+      }
+
       .consult-panel {
-        padding: 24px;
-        border-radius: 24px;
+        gap: 34px;
+        padding: 26px;
+        border-radius: 28px;
       }
     }
   </style>
@@ -836,33 +785,31 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-copy">
+          <div class="eyebrow">직접 채용과 구독형 재무팀의 월 비용 비교</div>
           <h1 id="hero-title">
             <span class="title-line">경리 직원 1명 채용 비용,</span>
             <span class="title-line">구독형 재무팀과 비교하세요.</span>
           </h1>
-          <p class="hero-note">직접 채용의 고정비와 외부 전담 관리 방식의 차이를 숫자로 먼저 확인하세요.</p>
+          <p class="hero-note">대표가 바로 판단할 수 있도록 고정비와 관리 범위를 숫자 중심으로 정리했습니다.</p>
         </div>
 
-        <div class="comparison-wrap" aria-label="직접 채용과 우리회사재무팀 구독 비용 비교">
+        <div class="comparison" aria-label="경리 직원 직접 채용과 우리회사재무팀 구독 비교">
           <article class="compare-card hire">
             <div class="card-head">
-              <div class="card-topline">
-                <span class="card-label">직접 채용</span>
-              </div>
+              <span class="card-label">직접 채용</span>
               <h2 class="card-title">경리 직원 직접 채용</h2>
-              <div class="metric" aria-label="월급 250만 원 기준 월 고정비 310만 원">
+              <div class="metric" aria-label="월급 250만 원 기준 고정비 310만 원">
                 <span class="metric-sub">월급 250만 원 기준</span>
                 <div class="metric-main">
-                  <span class="metric-prefix">월 고정비</span>
+                  <span class="metric-prefix">고정비</span>
                   <span class="metric-number">310</span>
                   <span class="metric-unit">만 원</span>
                 </div>
               </div>
-              <div class="metric-line" aria-hidden="true"><span></span></div>
             </div>
             <div class="card-body">
               <ul class="feature-list">
-                <li><span class="check">!</span><span>월급: 2,500,000원</span></li>
+                <li><span class="check">!</span><span>월급 2,500,000원</span></li>
                 <li><span class="check">!</span><span>4대보험 사업자 부담분</span></li>
                 <li><span class="check">!</span><span>퇴직금 적립 부담</span></li>
                 <li><span class="check">!</span><span>연차수당 및 대체인력 부담</span></li>
@@ -875,9 +822,7 @@
 
           <article class="compare-card subscription">
             <div class="card-head">
-              <div class="card-topline">
-                <span class="card-label">구독형 재무팀</span>
-              </div>
+              <span class="card-label">구독형 재무팀</span>
               <h2 class="card-title">우리회사재무팀 구독</h2>
               <div class="metric" aria-label="외부 전담 재무팀 구독 월 80만 원에서 160만 원">
                 <span class="metric-sub">외부 전담 재무팀 구독</span>
@@ -887,7 +832,6 @@
                   <span class="metric-unit">만 원</span>
                 </div>
               </div>
-              <div class="metric-line" aria-hidden="true"><span></span></div>
             </div>
             <div class="card-body">
               <ul class="feature-list">
@@ -904,10 +848,8 @@
           </article>
         </div>
 
-        <div class="saving-strip">
-          <span>직접 채용 대비</span>
-          <strong>월 150만~230만 원 절감 가능</strong>
-          <span>업무범위와 계약 조건에 따라 달라질 수 있습니다.</span>
+        <div class="saving-line">
+          직접 채용 대비 <strong>월 150만~230만 원 절감 가능</strong> · 업무범위와 계약 조건에 따라 달라질 수 있습니다.
         </div>
       </div>
     </section>
@@ -915,19 +857,19 @@
     <section class="trust" aria-label="우리회사재무팀 신뢰 요소">
       <div class="container trust-grid">
         <div class="trust-item">
-          <span class="trust-icon">01</span>
+          <span class="trust-index">01</span>
           <strong>직접 고용 부담 감소</strong>
         </div>
         <div class="trust-item">
-          <span class="trust-icon">02</span>
+          <span class="trust-index">02</span>
           <strong>퇴사·인수인계 리스크 없음</strong>
         </div>
         <div class="trust-item">
-          <span class="trust-icon">03</span>
+          <span class="trust-index">03</span>
           <strong>담당자 기반 정기 관리</strong>
         </div>
         <div class="trust-item">
-          <span class="trust-icon">04</span>
+          <span class="trust-index">04</span>
           <strong>월간 재무 리포트 제공</strong>
         </div>
       </div>
@@ -936,8 +878,9 @@
     <section class="work" aria-labelledby="work-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="work-title">반복되는 재무 업무를 정기적으로 관리합니다.</h2>
-          <p>대표가 직접 챙기기 어려운 자료 정리와 커뮤니케이션을 담당자 기반으로 운영합니다.</p>
+          <span class="section-kicker">MANAGED FINANCE OPS</span>
+          <h2 id="work-title">반복되는 재무 업무를<br>정돈된 운영 체계로 관리합니다.</h2>
+          <p>자료 정리, 증빙자료 관리, 신고 준비자료 정리까지 담당자 기반으로 월 단위 관리 흐름을 만듭니다.</p>
         </div>
         <div class="work-grid">
           <div class="work-item">입출금 내역 관리</div>
@@ -955,12 +898,13 @@
     <section class="consult" id="consult" aria-labelledby="consult-title">
       <div class="container consult-panel">
         <div class="consult-copy">
-          <h2 id="consult-title">우리 회사에 맞는 관리 범위를 확인하세요.</h2>
-          <p>현재 업무량, 매출 규모, 인원수를 기준으로 필요한 재무 관리 범위와 예상 비용을 안내드립니다.</p>
-          <ul class="consult-points">
-            <li><span>✓</span>업무범위에 맞춘 월 구독료 안내</li>
-            <li><span>✓</span>직접 채용 대비 고정비 차이 확인</li>
-            <li><span>✓</span>증빙자료 관리와 월간 리포트 구성 상담</li>
+          <span class="section-kicker">CONTACT</span>
+          <h2 id="consult-title">우리 회사에 맞는<br>관리 범위를 확인하세요.</h2>
+          <p>현재 매출 규모와 인원수, 필요한 업무 범위를 기준으로 예상 비용과 운영 방식을 안내드립니다.</p>
+          <ul class="consult-meta">
+            <li>업무범위에 맞춘 월 구독료 안내</li>
+            <li>직접 채용 대비 고정비 차이 확인</li>
+            <li>증빙자료 관리와 재무 리포트 구성 상담</li>
           </ul>
         </div>
 
@@ -987,7 +931,7 @@
           </div>
           <div class="field full">
             <label for="message">문의 내용</label>
-            <textarea id="message" name="message" placeholder="현재 관리 중인 업무나 상담이 필요한 내용을 적어주세요."></textarea>
+            <textarea id="message" name="message" placeholder="현재 필요한 업무나 상담받고 싶은 내용을 적어주세요."></textarea>
           </div>
           <div class="field full">
             <button class="submit-btn" type="submit">무료 상담 신청</button>
