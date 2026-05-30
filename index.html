@@ -3,31 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>우리회사재무팀 | 구독형 재무 관리 서비스</title>
+  <title>우리회사재무팀 | 중소기업 구독형 재무관리</title>
   <style>
     :root {
       --navy-950: #07111f;
       --navy-900: #0b1b33;
-      --navy-800: #122b4d;
+      --navy-800: #132946;
       --blue-700: #1d5fd7;
-      --blue-600: #2878f0;
-      --blue-500: #4594ff;
-      --sky-100: #edf6ff;
-      --sky-50: #f7fbff;
-      --gray-900: #111827;
-      --gray-700: #374151;
-      --gray-500: #6b7280;
-      --gray-300: #d8e0ea;
-      --gray-200: #e8edf4;
-      --gray-100: #f3f6fa;
+      --blue-600: #2563eb;
+      --blue-100: #eaf3ff;
+      --blue-50: #f5f9ff;
+      --slate-700: #354052;
+      --slate-600: #526174;
+      --slate-500: #69778a;
+      --line: #dce4ef;
+      --line-soft: #e8edf4;
+      --surface: #f6f9fd;
       --white: #ffffff;
-      --amber-600: #d97706;
-      --green-500: #10a37f;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
-      --shadow-card: 0 28px 80px rgba(15, 23, 42, 0.12);
-      --shadow-blue: 0 30px 80px rgba(29, 95, 215, 0.22);
-      --radius-lg: 28px;
-      --radius-md: 18px;
+      --amber-700: #a15c13;
+      --amber-100: #fff3df;
+      --green-700: #0c8f6d;
+      --shadow-sm: 0 14px 34px rgba(15, 23, 42, 0.07);
+      --shadow-md: 0 26px 72px rgba(15, 23, 42, 0.12);
+      --shadow-blue: 0 30px 84px rgba(37, 99, 235, 0.17);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
     }
 
     * {
@@ -40,12 +41,13 @@
 
     body {
       margin: 0;
-      color: var(--gray-900);
+      color: var(--navy-950);
       background: var(--white);
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      line-height: 1.55;
-      letter-spacing: 0;
+      line-height: 1.6;
       word-break: keep-all;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -59,126 +61,119 @@
       font: inherit;
     }
 
-    button {
-      border: 0;
-      cursor: pointer;
-    }
-
     .container {
-      width: min(1160px, calc(100% - 44px));
+      width: min(1200px, calc(100% - 56px));
       margin: 0 auto;
     }
 
-    .nav {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 40;
-      border-bottom: 1px solid rgba(216, 224, 234, 0.72);
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(20px);
+      z-index: 50;
+      border-bottom: 1px solid rgba(220, 228, 239, 0.78);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(18px);
     }
 
-    .nav-inner {
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 84px;
+      min-height: 88px;
       gap: 24px;
     }
 
-    .logo {
+    .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
       color: var(--navy-950);
       font-size: 21px;
-      font-weight: 850;
+      font-weight: 880;
       white-space: nowrap;
     }
 
-    .logo-mark {
+    .brand-mark {
       display: grid;
       place-items: center;
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.42);
+      width: 42px;
+      height: 42px;
       border-radius: 14px;
       color: var(--white);
       background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
-        linear-gradient(135deg, var(--navy-900), var(--blue-600));
-      box-shadow: 0 16px 34px rgba(29, 95, 215, 0.22);
+        linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0)),
+        linear-gradient(135deg, var(--navy-900), var(--blue-700));
+      box-shadow: 0 16px 36px rgba(29, 95, 215, 0.24);
       font-size: 15px;
       font-weight: 950;
     }
 
     .nav-cta,
-    .submit-btn {
+    .submit-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      border-radius: 14px;
+      min-height: 52px;
+      border: 0;
+      border-radius: 999px;
       color: var(--white);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0)),
-        linear-gradient(135deg, var(--navy-900), var(--blue-700));
-      box-shadow: 0 18px 38px rgba(11, 27, 51, 0.2);
-      font-weight: 820;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      background: linear-gradient(135deg, var(--navy-900), var(--blue-700));
+      box-shadow: 0 18px 40px rgba(11, 27, 51, 0.2);
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
       white-space: nowrap;
     }
 
     .nav-cta {
-      padding: 0 22px;
+      padding: 0 24px;
       font-size: 15px;
     }
 
     .nav-cta:hover,
-    .submit-btn:hover {
+    .submit-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 22px 48px rgba(29, 95, 215, 0.26);
+      box-shadow: 0 22px 52px rgba(29, 95, 215, 0.24);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      padding: 76px 0 58px;
+      padding: 96px 0 70px;
       background:
-        radial-gradient(circle at 20% 8%, rgba(40, 120, 240, 0.12), transparent 30%),
-        radial-gradient(circle at 82% 18%, rgba(69, 148, 255, 0.14), transparent 28%),
-        linear-gradient(180deg, #f8fbff 0%, #ffffff 78%);
+        radial-gradient(circle at 82% 14%, rgba(37, 99, 235, 0.1), transparent 32%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 74%);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(18, 43, 77, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(18, 43, 77, 0.045) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(440px, 1.05fr);
+      gap: 58px;
+      align-items: center;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-copy {
-      max-width: 780px;
-      margin: 0 auto 38px;
-      text-align: center;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      margin-bottom: 24px;
+      padding: 0 15px;
+      border: 1px solid rgba(29, 95, 215, 0.18);
+      border-radius: 999px;
+      color: var(--blue-700);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-sm);
+      font-size: 14px;
+      font-weight: 850;
     }
 
     h1 {
       margin: 0;
       color: var(--navy-950);
-      font-size: clamp(40px, 4.4vw, 64px);
-      line-height: 1.06;
+      font-size: clamp(52px, 5.2vw, 64px);
+      line-height: 1.15;
       font-weight: 920;
+      letter-spacing: -0.02em;
     }
 
     .title-line {
@@ -186,10 +181,184 @@
       white-space: nowrap;
     }
 
+    .hero-description {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--slate-600);
+      font-size: 18px;
+      line-height: 1.8;
+      font-weight: 560;
+    }
+
     .hero-note {
-      margin: 18px auto 0;
-      color: var(--gray-500);
-      font-size: clamp(17px, 2vw, 20px);
+      margin: 16px 0 0;
+      color: var(--slate-500);
+      font-size: 14px;
+      font-weight: 620;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(220, 228, 239, 0.92);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .hero-panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 30px 32px 22px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .hero-panel-head h2 {
+      margin: 0;
+      color: var(--navy-950);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .panel-note {
+      color: var(--slate-500);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .quick-compare {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: stretch;
+      padding: 30px 32px;
+    }
+
+    .quick-card {
+      min-height: 188px;
+      padding: 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 24px;
+      background: #ffffff;
+    }
+
+    .quick-card.highlight {
+      border-color: rgba(29, 95, 215, 0.22);
+      background: linear-gradient(180deg, #ffffff 0%, var(--blue-50) 100%);
+      box-shadow: 0 18px 44px rgba(37, 99, 235, 0.09);
+    }
+
+    .quick-title {
+      color: var(--slate-600);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .quick-number {
+      margin-top: 18px;
+      color: var(--navy-950);
+      font-size: clamp(34px, 3.8vw, 48px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .quick-card.highlight .quick-number {
+      color: var(--blue-700);
+    }
+
+    .quick-sub {
+      margin-top: 12px;
+      color: var(--slate-500);
+      font-size: 13px;
+      font-weight: 680;
+    }
+
+    .vs-small,
+    .vs-large {
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--slate-600);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      font-weight: 950;
+    }
+
+    .vs-small {
+      align-self: center;
+      width: 52px;
+      height: 52px;
+      font-size: 13px;
+    }
+
+    .hero-saving {
+      margin: 0 32px 32px;
+      padding: 20px 22px;
+      border: 1px solid rgba(29, 95, 215, 0.18);
+      border-radius: 22px;
+      color: var(--navy-950);
+      background: var(--blue-50);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .hero-saving span {
+      color: var(--blue-700);
+    }
+
+    .hero-saving small {
+      display: block;
+      margin-top: 7px;
+      color: var(--slate-500);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section-muted {
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      background: var(--surface);
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 44px;
+    }
+
+    .section-head.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--blue-700);
+      font-size: 13px;
+      font-weight: 920;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--navy-950);
+      font-size: clamp(34px, 3.8vw, 52px);
+      line-height: 1.18;
+      font-weight: 920;
+      letter-spacing: -0.015em;
+    }
+
+    .section-head p {
+      margin: 16px 0 0;
+      color: var(--slate-600);
+      font-size: 18px;
       font-weight: 560;
     }
 
@@ -197,192 +366,118 @@
       position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
-      gap: 26px;
+      gap: 30px;
       align-items: stretch;
-      margin-top: 30px;
     }
 
-    .vs-badge {
+    .vs-large {
       position: absolute;
       top: 50%;
       left: 50%;
-      z-index: 5;
-      display: grid;
-      place-items: center;
-      width: 72px;
-      height: 72px;
-      border: 1px solid rgba(255, 255, 255, 0.88);
-      border-radius: 999px;
-      color: var(--navy-900);
-      background:
-        linear-gradient(#ffffff, #ffffff) padding-box,
-        linear-gradient(135deg, rgba(29, 95, 215, 0.16), rgba(16, 163, 127, 0.22)) border-box;
-      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.14);
+      z-index: 3;
+      width: 70px;
+      height: 70px;
       transform: translate(-50%, -50%);
-      font-size: 17px;
-      font-weight: 950;
-      letter-spacing: 0;
+      font-size: 15px;
     }
 
     .compare-card {
-      position: relative;
       display: flex;
       flex-direction: column;
-      min-height: 560px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: var(--shadow-card);
+      min-height: 610px;
+      border: 1px solid var(--line-soft);
+      border-radius: 32px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
       overflow: hidden;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
     }
 
-    .compare-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
+    .compare-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
     }
 
-    .hire {
-      border: 1px solid rgba(216, 224, 234, 0.96);
-    }
-
-    .hire::after {
-      border: 1px solid rgba(217, 119, 6, 0.08);
-    }
-
-    .subscription {
-      border: 1px solid rgba(29, 95, 215, 0.28);
+    .compare-card.primary {
+      border-color: rgba(29, 95, 215, 0.24);
       box-shadow: var(--shadow-blue);
-      transform: translateY(-8px);
     }
 
-    .subscription::after {
-      border: 1px solid rgba(69, 148, 255, 0.18);
+    .compare-head {
+      padding: 38px 40px 32px;
+      border-bottom: 1px solid var(--line-soft);
     }
 
-    .card-head {
-      padding: 34px 34px 26px;
-      border-bottom: 1px solid rgba(216, 224, 234, 0.66);
-    }
-
-    .card-topline {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .card-label {
+    .card-badge {
       display: inline-flex;
       align-items: center;
-      height: 34px;
+      min-height: 34px;
+      margin-bottom: 24px;
       padding: 0 13px;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 850;
-    }
-
-    .hire .card-label {
-      color: #9a5b05;
-      background: #fff7ed;
-    }
-
-    .subscription .card-label {
-      color: var(--white);
-      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
-      box-shadow: 0 12px 28px rgba(29, 95, 215, 0.22);
-    }
-
-    .card-caption {
-      color: var(--gray-500);
-      font-size: 14px;
-      font-weight: 720;
-    }
-
-    .card-title {
-      margin: 0 0 20px;
-      color: var(--navy-950);
-      font-size: 26px;
-      line-height: 1.25;
       font-weight: 900;
     }
 
-    .metric {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .card-badge.muted {
+      color: #85520d;
+      background: var(--amber-100);
     }
 
-    .metric-sub {
-      color: var(--gray-500);
-      font-size: 16px;
-      font-weight: 760;
+    .card-badge.blue {
+      color: var(--blue-700);
+      background: var(--blue-100);
     }
 
-    .metric-main {
+    .compare-head h3 {
+      margin: 0;
+      color: var(--navy-950);
+      font-size: 30px;
+      line-height: 1.25;
+      font-weight: 920;
+    }
+
+    .price {
       display: flex;
       align-items: flex-end;
       gap: 8px;
+      margin-top: 22px;
       color: var(--navy-950);
-      line-height: 0.95;
+      line-height: 1;
     }
 
-    .metric-prefix,
-    .metric-unit {
-      padding-bottom: 8px;
-      color: var(--navy-900);
-      font-size: clamp(20px, 2vw, 26px);
-      font-weight: 900;
+    .price-prefix,
+    .price-unit {
+      padding-bottom: 9px;
+      font-size: 24px;
+      font-weight: 920;
     }
 
-    .metric-number {
-      font-size: clamp(54px, 6vw, 76px);
+    .price-number {
+      font-size: clamp(58px, 5.8vw, 78px);
       font-weight: 950;
-      letter-spacing: 0;
+      letter-spacing: -0.025em;
     }
 
-    .hire .metric-number {
-      color: var(--amber-600);
-    }
-
-    .subscription .metric-number {
+    .compare-card.primary .price-number {
       color: var(--blue-700);
     }
 
-    .metric-line {
-      height: 10px;
-      margin-top: 24px;
-      border-radius: 999px;
-      background: var(--gray-100);
-      overflow: hidden;
+    .price-sub {
+      margin-top: 13px;
+      color: var(--slate-500);
+      font-size: 15px;
+      font-weight: 760;
     }
 
-    .metric-line span {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-    }
-
-    .hire .metric-line span {
-      width: 100%;
-      background: linear-gradient(90deg, #fed7aa, var(--amber-600));
-    }
-
-    .subscription .metric-line span {
-      width: 52%;
-      background: linear-gradient(90deg, var(--green-500), var(--blue-500));
-    }
-
-    .card-body {
+    .compare-body {
       flex: 1;
-      padding: 28px 34px 34px;
+      padding: 34px 40px 40px;
     }
 
     .feature-list {
       display: grid;
-      gap: 14px;
+      gap: 15px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -390,219 +485,230 @@
 
     .feature-list li {
       display: grid;
-      grid-template-columns: 25px minmax(0, 1fr);
-      gap: 12px;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 13px;
       align-items: start;
-      color: var(--gray-700);
-      font-size: 16px;
+      color: var(--slate-700);
+      font-size: 17px;
       line-height: 1.45;
-      font-weight: 650;
+      font-weight: 690;
     }
 
-    .check {
+    .list-icon {
       display: grid;
       place-items: center;
-      width: 25px;
-      height: 25px;
-      border-radius: 9px;
-      font-size: 14px;
-      line-height: 1;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: var(--slate-600);
+      background: var(--surface);
+      font-size: 13px;
       font-weight: 950;
     }
 
-    .hire .check {
-      color: #9a5b05;
-      background: #fff7ed;
-    }
-
-    .subscription .check {
+    .primary .list-icon {
       color: var(--blue-700);
-      background: #eaf4ff;
+      background: var(--blue-100);
     }
 
-    .saving-strip {
-      display: flex;
+    .cost-difference {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 26px auto 0;
-      padding: 14px 18px;
-      width: fit-content;
-      max-width: 100%;
-      border: 1px solid rgba(29, 95, 215, 0.16);
-      border-radius: 999px;
-      color: var(--navy-900);
-      background: rgba(255, 255, 255, 0.76);
-      box-shadow: var(--shadow-soft);
-      font-size: 15px;
-      font-weight: 780;
-      text-align: center;
+      margin-top: 30px;
+      padding: 24px 28px;
+      border: 1px solid rgba(29, 95, 215, 0.18);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--navy-950), var(--navy-800));
+      box-shadow: var(--shadow-md);
+      color: var(--white);
     }
 
-    .saving-strip strong {
-      color: var(--blue-700);
-      font-weight: 930;
+    .cost-difference strong {
+      display: block;
+      font-size: clamp(24px, 2.8vw, 34px);
+      line-height: 1.25;
+      font-weight: 940;
     }
 
-    .trust {
-      padding: 28px 0 78px;
-      background: #ffffff;
+    .cost-difference small {
+      display: block;
+      margin-top: 7px;
+      color: #c9d6e8;
+      font-size: 13px;
+      font-weight: 560;
     }
 
-    .trust-grid {
+    .cost-chip {
+      display: grid;
+      place-items: center;
+      min-width: 132px;
+      min-height: 76px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 18px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 24px;
+      font-weight: 950;
+    }
+
+    .trust-grid,
+    .service-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      gap: 18px;
     }
 
-    .trust-item {
-      min-height: 142px;
-      padding: 22px;
-      border: 1px solid rgba(216, 224, 234, 0.9);
-      border-radius: 22px;
-      background: linear-gradient(180deg, #ffffff, #fbfdff);
-      box-shadow: var(--shadow-soft);
+    .trust-card,
+    .service-card {
+      border: 1px solid var(--line-soft);
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
-    .trust-icon {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 18px;
-      border-radius: 14px;
+    .trust-card:hover,
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--line);
+      box-shadow: var(--shadow-md);
+    }
+
+    .trust-card {
+      min-height: 230px;
+      padding: 28px;
+    }
+
+    .trust-number,
+    .service-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      height: 30px;
+      margin-bottom: 30px;
+      border-radius: 999px;
       color: var(--blue-700);
-      background: var(--sky-100);
-      font-size: 18px;
+      background: var(--blue-100);
+      font-size: 12px;
       font-weight: 950;
     }
 
-    .trust-item strong {
+    .trust-card h3 {
+      margin: 0;
+      color: var(--navy-950);
+      font-size: 21px;
+      line-height: 1.34;
+      font-weight: 920;
+    }
+
+    .trust-card p {
+      margin: 13px 0 0;
+      color: var(--slate-600);
+      font-size: 15px;
+      line-height: 1.65;
+      font-weight: 560;
+    }
+
+    .service-card {
+      min-height: 150px;
+      padding: 24px;
+    }
+
+    .service-number {
+      margin-bottom: 22px;
+      background: #eef4fb;
+      color: var(--slate-700);
+    }
+
+    .service-card strong {
       display: block;
       color: var(--navy-950);
       font-size: 17px;
-      line-height: 1.36;
-      font-weight: 900;
-    }
-
-    .work {
-      padding: 76px 0;
-      background: var(--sky-50);
-      border-top: 1px solid var(--gray-200);
-      border-bottom: 1px solid var(--gray-200);
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      text-align: center;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      color: var(--navy-950);
-      font-size: clamp(30px, 3.6vw, 46px);
-      line-height: 1.18;
-      font-weight: 920;
-    }
-
-    .section-head p {
-      margin: 14px 0 0;
-      color: var(--gray-500);
-      font-size: 17px;
-      font-weight: 560;
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .work-item {
-      display: flex;
-      align-items: center;
-      min-height: 74px;
-      padding: 16px 18px;
-      border: 1px solid rgba(216, 224, 234, 0.9);
-      border-radius: 16px;
-      color: var(--gray-700);
-      background: var(--white);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
-      font-size: 15px;
       line-height: 1.42;
-      font-weight: 760;
+      font-weight: 860;
     }
 
-    .consult {
-      padding: 86px 0;
-      background:
-        radial-gradient(circle at 12% 16%, rgba(40, 120, 240, 0.12), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+    .contact {
+      padding: 112px 0;
+      background: linear-gradient(180deg, #ffffff 0%, var(--blue-50) 100%);
     }
 
-    .consult-panel {
+    .contact-panel {
       display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
-      gap: 34px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 44px;
       align-items: start;
-      padding: 40px;
-      border: 1px solid rgba(216, 224, 234, 0.88);
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: var(--shadow-card);
-      backdrop-filter: blur(18px);
+      padding: 46px;
+      border: 1px solid var(--line-soft);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-md);
     }
 
-    .consult-copy h2 {
+    .contact-copy {
+      padding: 10px 8px 0 0;
+    }
+
+    .contact-copy h2 {
       margin: 0;
       color: var(--navy-950);
-      font-size: clamp(30px, 3.4vw, 46px);
+      font-size: clamp(34px, 4vw, 52px);
       line-height: 1.18;
       font-weight: 920;
+      letter-spacing: -0.015em;
     }
 
-    .consult-copy p {
-      margin: 16px 0 0;
-      color: var(--gray-500);
-      font-size: 17px;
+    .contact-copy p {
+      margin: 18px 0 0;
+      color: var(--slate-600);
+      font-size: 18px;
+      line-height: 1.75;
       font-weight: 560;
     }
 
-    .consult-points {
+    .contact-points {
       display: grid;
       gap: 12px;
-      margin: 28px 0 0;
-      padding: 0;
-      list-style: none;
+      margin-top: 30px;
     }
 
-    .consult-points li {
+    .contact-point {
       display: flex;
-      gap: 10px;
       align-items: center;
-      color: var(--gray-700);
+      gap: 12px;
+      color: var(--slate-700);
       font-size: 15px;
       font-weight: 760;
     }
 
-    .consult-points span {
+    .contact-point span {
       display: grid;
       place-items: center;
-      width: 23px;
-      height: 23px;
-      border-radius: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
       color: var(--blue-700);
-      background: var(--sky-100);
-      font-size: 13px;
+      background: var(--blue-100);
+      font-size: 12px;
       font-weight: 950;
       flex: 0 0 auto;
+    }
+
+    .form-shell {
+      padding: 30px;
+      border: 1px solid var(--line-soft);
+      border-radius: 28px;
+      background: #fbfdff;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
 
     .consult-form {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 15px;
     }
 
     .field {
@@ -617,28 +723,28 @@
     label {
       color: var(--navy-900);
       font-size: 13px;
-      font-weight: 820;
+      font-weight: 850;
     }
 
     input,
     textarea {
       width: 100%;
-      border: 1px solid var(--gray-300);
+      border: 1px solid var(--line);
       border-radius: 15px;
-      color: var(--gray-900);
-      background: #ffffff;
+      color: var(--navy-950);
+      background: var(--white);
       outline: none;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     input {
-      height: 52px;
+      height: 54px;
       padding: 0 15px;
     }
 
     textarea {
-      min-height: 118px;
-      padding: 14px 15px;
+      min-height: 132px;
+      padding: 15px;
       resize: vertical;
     }
 
@@ -649,103 +755,53 @@
 
     input:focus,
     textarea:focus {
-      border-color: var(--blue-500);
-      box-shadow: 0 0 0 4px rgba(69, 148, 255, 0.14);
+      border-color: rgba(37, 99, 235, 0.64);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+      background: #ffffff;
     }
 
-    .submit-btn {
+    .submit-button {
       width: 100%;
-      min-height: 56px;
+      min-height: 58px;
       font-size: 16px;
     }
 
     .form-note {
       margin: 0;
-      color: var(--gray-500);
+      color: var(--slate-500);
       font-size: 13px;
       text-align: center;
     }
 
-    @media (max-width: 960px) {
-      .comparison-wrap {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.5s ease forwards;
+    }
 
-      .vs-badge {
-        top: 50%;
-        left: 50%;
-        width: 66px;
-        height: 66px;
-      }
+    .delay-1 {
+      animation-delay: 0.08s;
+    }
 
-      .subscription {
-        transform: none;
-      }
-
-      .trust-grid,
-      .work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .consult-panel {
-        grid-template-columns: 1fr;
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 620px) {
-      .container {
-        width: min(100% - 28px, 1160px);
+    @media (max-width: 1040px) {
+      .hero-layout,
+      .comparison-wrap,
+      .contact-panel {
+        grid-template-columns: 1fr;
       }
 
-      .nav-inner {
-        min-height: 70px;
+      .hero-layout {
+        gap: 40px;
       }
 
-      .logo {
-        gap: 9px;
-        font-size: 18px;
-      }
-
-      .logo-mark {
-        width: 34px;
-        height: 34px;
-        border-radius: 11px;
-      }
-
-      .nav-cta {
-        min-height: 42px;
-        padding: 0 14px;
-        border-radius: 12px;
-        font-size: 14px;
-      }
-
-      .hero {
-        padding: 52px 0 42px;
-      }
-
-      .hero-copy {
-        margin-bottom: 26px;
-        text-align: left;
-      }
-
-      h1 {
-        font-size: 38px;
-      }
-
-      .title-line {
-        white-space: normal;
-      }
-
-      .hero-note {
-        font-size: 16px;
-      }
-
-      .comparison-wrap {
-        gap: 18px;
-      }
-
-      .vs-badge {
+      .vs-large {
         position: relative;
         top: auto;
         left: auto;
@@ -753,79 +809,144 @@
         transform: none;
       }
 
-      .compare-card {
-        min-height: auto;
+      .trust-grid,
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 30px, 1200px);
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .brand {
+        gap: 10px;
+        font-size: 18px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+      }
+
+      .nav-cta {
+        min-height: 42px;
+        padding: 0 15px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 58px 0 60px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .title-line {
+        white-space: normal;
+      }
+
+      .hero-description,
+      .section-head p,
+      .contact-copy p {
+        font-size: 16px;
+      }
+
+      .quick-compare {
+        grid-template-columns: 1fr;
+      }
+
+      .vs-small {
+        margin: 0 auto;
+      }
+
+      .hero-panel,
+      .compare-card,
+      .contact-panel {
         border-radius: 24px;
       }
 
-      .card-head,
-      .card-body {
+      .hero-panel-head,
+      .quick-compare,
+      .hero-saving,
+      .compare-head,
+      .compare-body {
         padding-left: 22px;
         padding-right: 22px;
       }
 
-      .card-topline {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
+      .section,
+      .contact {
+        padding: 76px 0;
       }
 
-      .card-title {
-        font-size: 23px;
+      .section-head.center {
+        text-align: left;
       }
 
-      .metric-main {
+      .comparison-wrap {
+        gap: 20px;
+      }
+
+      .compare-card {
+        min-height: auto;
+      }
+
+      .price {
         gap: 6px;
       }
 
-      .metric-number {
-        font-size: 54px;
-      }
-
-      .metric-prefix,
-      .metric-unit {
-        font-size: 20px;
+      .price-prefix,
+      .price-unit {
         padding-bottom: 7px;
+        font-size: 20px;
       }
 
-      .saving-strip {
+      .price-number {
+        font-size: 52px;
+      }
+
+      .cost-difference {
+        grid-template-columns: 1fr;
+      }
+
+      .cost-chip {
         width: 100%;
-        border-radius: 18px;
-        flex-direction: column;
-      }
-
-      .trust {
-        padding-bottom: 52px;
       }
 
       .trust-grid,
-      .work-grid,
+      .service-grid,
       .consult-form {
         grid-template-columns: 1fr;
       }
 
-      .work,
-      .consult {
-        padding: 58px 0;
+      .trust-card,
+      .service-card {
+        min-height: auto;
       }
 
-      .section-head,
-      .consult-copy {
-        text-align: left;
+      .contact-panel {
+        padding: 22px;
       }
 
-      .consult-panel {
-        padding: 24px;
-        border-radius: 24px;
+      .form-shell {
+        padding: 18px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="logo" href="#" aria-label="우리회사재무팀 홈">
-        <span class="logo-mark">W</span>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#" aria-label="우리회사재무팀 홈">
+        <span class="brand-mark">W</span>
         <span>우리회사재무팀</span>
       </a>
       <a class="nav-cta" href="#consult">무료 상담</a>
@@ -833,168 +954,210 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1 id="hero-title">
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="fade-up">
+          <span class="eyebrow">중소기업을 위한 구독형 재무관리</span>
+          <h1>
             <span class="title-line">경리 직원 1명 채용 비용,</span>
             <span class="title-line">구독형 재무팀과 비교하세요.</span>
           </h1>
-          <p class="hero-note">직접 채용의 고정비와 외부 전담 관리 방식의 차이를 숫자로 먼저 확인하세요.</p>
+          <p class="hero-description">월급 250만 원만 보면 안 됩니다. 4대보험, 퇴직금, 연차수당, 채용·퇴사 리스크까지 포함하면 실제 고정비는 더 커집니다.</p>
+          <p class="hero-note">우리회사재무팀은 월 80만~160만 원으로 외부 전담팀처럼 관리합니다.</p>
         </div>
 
-        <div class="comparison-wrap" aria-label="직접 채용과 우리회사재무팀 구독 비용 비교">
-          <article class="compare-card hire">
-            <div class="card-head">
-              <div class="card-topline">
-                <span class="card-label">직접 채용</span>
-              </div>
-              <h2 class="card-title">경리 직원 직접 채용</h2>
-              <div class="metric" aria-label="월급 250만 원 기준 월 고정비 310만 원">
-                <span class="metric-sub">월급 250만 원 기준</span>
-                <div class="metric-main">
-                  <span class="metric-prefix">월 고정비</span>
-                  <span class="metric-number">310</span>
-                  <span class="metric-unit">만 원</span>
-                </div>
-              </div>
-              <div class="metric-line" aria-hidden="true"><span></span></div>
+        <aside class="hero-panel fade-up delay-1" aria-label="월 고정비 비교">
+          <div class="hero-panel-head">
+            <h2>월 고정비 비교</h2>
+            <span class="panel-note">월급 250만 원 기준</span>
+          </div>
+          <div class="quick-compare">
+            <div class="quick-card">
+              <div class="quick-title">직접 채용</div>
+              <div class="quick-number">310만 원</div>
+              <div class="quick-sub">4대보험·퇴직금 등 부대비용 고려</div>
             </div>
-            <div class="card-body">
+            <div class="vs-small">VS</div>
+            <div class="quick-card highlight">
+              <div class="quick-title">우리회사재무팀</div>
+              <div class="quick-number">80~160만 원</div>
+              <div class="quick-sub">구독형 재무관리</div>
+            </div>
+          </div>
+          <div class="hero-saving">
+            직접 채용 대비 <span>월 150만~230만 원</span> 비용 차이
+            <small>실제 비용은 업무 범위와 계약 조건에 따라 달라질 수 있습니다.</small>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-head center">
+          <span class="section-kicker">COST COMPARISON</span>
+          <h2 id="comparison-title">비용과 운영 리스크를 한 번에 비교하세요.</h2>
+          <p>직접 채용의 고정비 구조와 구독형 재무관리의 관리 범위를 대표 관점에서 정리했습니다.</p>
+        </div>
+
+        <div class="comparison-wrap">
+          <article class="compare-card">
+            <div class="compare-head">
+              <span class="card-badge muted">직접 채용</span>
+              <h3>경리 직원 직접 채용</h3>
+              <div class="price" aria-label="고정비 310만 원">
+                <span class="price-prefix">고정비</span>
+                <span class="price-number">310</span>
+                <span class="price-unit">만 원</span>
+              </div>
+              <div class="price-sub">월급 250만 원 기준</div>
+            </div>
+            <div class="compare-body">
               <ul class="feature-list">
-                <li><span class="check">!</span><span>월급: 2,500,000원</span></li>
-                <li><span class="check">!</span><span>4대보험 사업자 부담분</span></li>
-                <li><span class="check">!</span><span>퇴직금 적립 부담</span></li>
-                <li><span class="check">!</span><span>연차수당 및 대체인력 부담</span></li>
-                <li><span class="check">!</span><span>채용·퇴사·인수인계 리스크</span></li>
+                <li><span class="list-icon">!</span><span>월급 2,500,000원</span></li>
+                <li><span class="list-icon">!</span><span>4대보험 사업자 부담분</span></li>
+                <li><span class="list-icon">!</span><span>퇴직금 적립 부담</span></li>
+                <li><span class="list-icon">!</span><span>연차수당 및 대체인력 부담</span></li>
+                <li><span class="list-icon">!</span><span>채용·퇴사·인수인계 리스크</span></li>
               </ul>
             </div>
           </article>
 
-          <div class="vs-badge" aria-hidden="true">VS</div>
+          <div class="vs-large" aria-hidden="true">VS</div>
 
-          <article class="compare-card subscription">
-            <div class="card-head">
-              <div class="card-topline">
-                <span class="card-label">구독형 재무팀</span>
+          <article class="compare-card primary">
+            <div class="compare-head">
+              <span class="card-badge blue">구독형 관리</span>
+              <h3>우리회사재무팀 구독</h3>
+              <div class="price" aria-label="월 80만 원에서 160만 원">
+                <span class="price-prefix">월</span>
+                <span class="price-number">80~160</span>
+                <span class="price-unit">만 원</span>
               </div>
-              <h2 class="card-title">우리회사재무팀 구독</h2>
-              <div class="metric" aria-label="외부 전담 재무팀 구독 월 80만 원에서 160만 원">
-                <span class="metric-sub">외부 전담 재무팀 구독</span>
-                <div class="metric-main">
-                  <span class="metric-prefix">월</span>
-                  <span class="metric-number">80~160</span>
-                  <span class="metric-unit">만 원</span>
-                </div>
-              </div>
-              <div class="metric-line" aria-hidden="true"><span></span></div>
+              <div class="price-sub">외부 전담 재무팀 구독</div>
             </div>
-            <div class="card-body">
+            <div class="compare-body">
               <ul class="feature-list">
-                <li><span class="check">✓</span><span>입출금 내역 관리</span></li>
-                <li><span class="check">✓</span><span>미수금 관리</span></li>
-                <li><span class="check">✓</span><span>세금계산서 발급 및 기타 증빙 관리</span></li>
-                <li><span class="check">✓</span><span>세무법인 연계 신고 지원</span></li>
-                <li><span class="check">✓</span><span>인사관리</span></li>
-                <li><span class="check">✓</span><span>재무 리포트</span></li>
-                <li><span class="check">✓</span><span>국가지원사업 정산</span></li>
-                <li><span class="check">✓</span><span>퇴사리스크 없음</span></li>
+                <li><span class="list-icon">✓</span><span>입출금 내역 관리</span></li>
+                <li><span class="list-icon">✓</span><span>미수금 관리</span></li>
+                <li><span class="list-icon">✓</span><span>세금계산서 발급 및 기타 증빙 관리</span></li>
+                <li><span class="list-icon">✓</span><span>세무법인 연계 신고 지원</span></li>
+                <li><span class="list-icon">✓</span><span>인사관리</span></li>
+                <li><span class="list-icon">✓</span><span>재무 리포트</span></li>
+                <li><span class="list-icon">✓</span><span>국가지원사업 정산</span></li>
+                <li><span class="list-icon">✓</span><span>퇴사리스크 없음</span></li>
               </ul>
             </div>
           </article>
         </div>
 
-        <div class="saving-strip">
-          <span>직접 채용 대비</span>
-          <strong>월 150만~230만 원 절감 가능</strong>
-          <span>업무범위와 계약 조건에 따라 달라질 수 있습니다.</span>
+        <div class="cost-difference">
+          <div>
+            <strong>직접 채용 대비 월 150만~230만 원 비용 차이</strong>
+            <small>실제 비용은 업무 범위와 계약 조건에 따라 달라질 수 있습니다.</small>
+          </div>
+          <div class="cost-chip">230만+</div>
         </div>
       </div>
     </section>
 
-    <section class="trust" aria-label="우리회사재무팀 신뢰 요소">
-      <div class="container trust-grid">
-        <div class="trust-item">
-          <span class="trust-icon">01</span>
-          <strong>직접 고용 부담 감소</strong>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">02</span>
-          <strong>퇴사·인수인계 리스크 없음</strong>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">03</span>
-          <strong>담당자 기반 정기 관리</strong>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">04</span>
-          <strong>월간 재무 리포트 제공</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="work" aria-labelledby="work-title">
+    <section class="section" aria-labelledby="trust-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="work-title">반복되는 재무 업무를 정기적으로 관리합니다.</h2>
-          <p>대표가 직접 챙기기 어려운 자료 정리와 커뮤니케이션을 담당자 기반으로 운영합니다.</p>
+          <span class="section-kicker">TRUST POINT</span>
+          <h2 id="trust-title">직접 고용 없이도 재무관리 체계를 만들 수 있습니다.</h2>
         </div>
-        <div class="work-grid">
-          <div class="work-item">입출금 내역 관리</div>
-          <div class="work-item">미수금 관리</div>
-          <div class="work-item">세금계산서 발급 및 기타 증빙 관리</div>
-          <div class="work-item">세무법인 연계 신고 지원</div>
-          <div class="work-item">인사관리</div>
-          <div class="work-item">재무 리포트</div>
-          <div class="work-item">국가지원사업 정산</div>
-          <div class="work-item">개별 법인에 따른 기타 업무 가능</div>
+        <div class="trust-grid">
+          <article class="trust-card">
+            <span class="trust-number">01</span>
+            <h3>직접 고용 부담 감소</h3>
+            <p>직원 채용 없이 필요한 재무관리 기능만 외부 전담팀처럼 이용할 수 있습니다.</p>
+          </article>
+          <article class="trust-card">
+            <span class="trust-number">02</span>
+            <h3>퇴사·인수인계 리스크 없음</h3>
+            <p>담당자 공백으로 업무가 멈추지 않도록 정기 관리 흐름을 유지합니다.</p>
+          </article>
+          <article class="trust-card">
+            <span class="trust-number">03</span>
+            <h3>담당자 기반 정기 관리</h3>
+            <p>입출금, 미수금, 증빙자료 관리 등 반복 업무를 월 단위로 점검합니다.</p>
+          </article>
+          <article class="trust-card">
+            <span class="trust-number">04</span>
+            <h3>월간 재무 리포트 제공</h3>
+            <p>대표가 자금 흐름과 주요 이슈를 빠르게 파악할 수 있도록 정리합니다.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="consult" id="consult" aria-labelledby="consult-title">
-      <div class="container consult-panel">
-        <div class="consult-copy">
+    <section class="section section-muted" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head center">
+          <span class="section-kicker">SERVICE SCOPE</span>
+          <h2 id="services-title">반복되는 재무 업무를 정돈된 기준으로 관리합니다.</h2>
+          <p>회사 상황에 맞춰 필요한 업무 범위를 구성하고 월 단위로 관리합니다.</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-card"><span class="service-number">01</span><strong>입출금 내역 관리</strong></div>
+          <div class="service-card"><span class="service-number">02</span><strong>미수금 관리</strong></div>
+          <div class="service-card"><span class="service-number">03</span><strong>세금계산서 발급 및 기타 증빙 관리</strong></div>
+          <div class="service-card"><span class="service-number">04</span><strong>세무법인 연계 신고 지원</strong></div>
+          <div class="service-card"><span class="service-number">05</span><strong>인사관리</strong></div>
+          <div class="service-card"><span class="service-number">06</span><strong>재무 리포트</strong></div>
+          <div class="service-card"><span class="service-number">07</span><strong>국가지원사업 정산</strong></div>
+          <div class="service-card"><span class="service-number">08</span><strong>개별 법인에 따른 기타 업무 가능</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="consult" aria-labelledby="consult-title">
+      <div class="container contact-panel">
+        <div class="contact-copy">
+          <span class="section-kicker">CONSULTATION</span>
           <h2 id="consult-title">우리 회사에 맞는 관리 범위를 확인하세요.</h2>
-          <p>현재 업무량, 매출 규모, 인원수를 기준으로 필요한 재무 관리 범위와 예상 비용을 안내드립니다.</p>
-          <ul class="consult-points">
-            <li><span>✓</span>업무범위에 맞춘 월 구독료 안내</li>
-            <li><span>✓</span>직접 채용 대비 고정비 차이 확인</li>
-            <li><span>✓</span>증빙자료 관리와 월간 리포트 구성 상담</li>
-          </ul>
+          <p>회사 규모와 업무량에 따라 필요한 관리 범위가 달라집니다. 상담 신청을 남겨주시면 현재 상황에 맞는 구성을 안내드립니다.</p>
+          <div class="contact-points">
+            <div class="contact-point"><span>1</span>업무범위 맞춤 검토</div>
+            <div class="contact-point"><span>2</span>세무법인 연계 자료 정리</div>
+            <div class="contact-point"><span>3</span>정기 관리 가능 여부 확인</div>
+          </div>
         </div>
 
-        <form class="consult-form" action="https://formspree.io/f/mvzywzrk" method="POST">
-          <div class="field">
-            <label for="company">회사명</label>
-            <input id="company" name="company" type="text" placeholder="예: 우리회사" autocomplete="organization" required>
-          </div>
-          <div class="field">
-            <label for="manager">담당자명</label>
-            <input id="manager" name="manager" type="text" placeholder="예: 김대표" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="phone">연락처</label>
-            <input id="phone" name="phone" type="tel" placeholder="예: 010-0000-0000" autocomplete="tel" required>
-          </div>
-          <div class="field">
-            <label for="revenue">연매출</label>
-            <input id="revenue" name="revenue" type="text" placeholder="예: 연 5억 원">
-          </div>
-          <div class="field">
-            <label for="employees">사원수</label>
-            <input id="employees" name="employees" type="text" placeholder="예: 7명">
-          </div>
-          <div class="field full">
-            <label for="message">문의 내용</label>
-            <textarea id="message" name="message" placeholder="현재 관리 중인 업무나 상담이 필요한 내용을 적어주세요."></textarea>
-          </div>
-          <input type="hidden" name="_subject" value="우리회사재무팀 상담 신청">
-          <div class="field full">
-            <button class="submit-btn" type="submit">무료 상담 신청</button>
-          </div>
-          <p class="form-note field full">입력하신 내용은 상담 안내 목적으로만 확인합니다.</p>
-        </form>
+        <div class="form-shell">
+          <form class="consult-form" action="https://formspree.io/f/mvzywzrk" method="POST">
+            <div class="field">
+              <label for="company">회사명</label>
+              <input id="company" name="company" type="text" placeholder="예: 주식회사 우리회사" autocomplete="organization" required>
+            </div>
+            <div class="field">
+              <label for="name">담당자명</label>
+              <input id="name" name="name" type="text" placeholder="예: 김대표" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">연락처</label>
+              <input id="phone" name="phone" type="tel" placeholder="예: 010-0000-0000" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="revenue">연매출</label>
+              <input id="revenue" name="revenue" type="text" placeholder="예: 연 5억 원">
+            </div>
+            <div class="field">
+              <label for="employees">사원수</label>
+              <input id="employees" name="employees" type="text" placeholder="예: 7명">
+            </div>
+            <div class="field full">
+              <label for="message">문의 내용</label>
+              <textarea id="message" name="message" placeholder="현재 경리/재무관리에서 불편한 점을 적어주세요."></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="우리회사재무팀 상담 신청">
+            <div class="field full">
+              <button class="submit-button" type="submit">상담 신청하기</button>
+            </div>
+            <p class="form-note field full">제출 시 Formspree를 통해 상담 내용이 전달됩니다.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -1008,35 +1171,14 @@
       }
     });
 
-    document.querySelector('.consult-form').addEventListener('submit', async function (event) {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const submitButton = form.querySelector('.submit-btn');
-      const originalText = submitButton.textContent;
+    document.querySelector('.consult-form').addEventListener('submit', function (event) {
+      const firstInvalid = Array.from(event.currentTarget.querySelectorAll('[required]')).find(function (field) {
+        return !field.value.trim();
+      });
 
-      submitButton.disabled = true;
-      submitButton.textContent = '접수 중입니다';
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: {
-            Accept: 'application/json'
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error('Formspree submission failed');
-        }
-
-        form.reset();
-        alert('상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.');
-      } catch (error) {
-        alert('상담 신청 전송에 실패했습니다. 잠시 후 다시 시도해주세요.');
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
+      if (firstInvalid) {
+        event.preventDefault();
+        firstInvalid.focus();
       }
     });
   </script>
