@@ -155,6 +155,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 2px 6px;
       min-height: 36px;
       max-width: min(100%, 760px);
       margin-bottom: 24px;
@@ -167,6 +169,18 @@
       font-size: clamp(17px, 1.7vw, 22px);
       line-height: 1.45;
       font-weight: 900;
+    }
+
+    .eyebrow-strong {
+      color: var(--navy-950);
+      font-weight: 950;
+    }
+
+    .eyebrow-quote {
+      display: block;
+      flex-basis: 100%;
+      color: var(--blue-700);
+      font-weight: 950;
     }
 
     h1 {
@@ -844,7 +858,11 @@
     <section class="hero">
       <div class="container hero-layout">
         <div class="fade-up">
-          <span class="eyebrow">충청권 중소기업을 위한 주기적 현장 재무점검 기반 비대면 구독형 재무팀</span>
+          <span class="eyebrow">
+            충청권 중소기업을 위한
+            <strong class="eyebrow-strong">주기적 현장 재무점검 기반</strong>
+            <span class="eyebrow-quote">'비대면 구독형 재무팀'</span>
+          </span>
           <h1>
             <span class="title-line">경리 직원 1명 채용 비용,</span>
             <span class="title-line">구독형 재무팀과 비교하세요.</span>
