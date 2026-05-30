@@ -285,14 +285,16 @@
 
     .vs-large {
       position: absolute;
-      top: 50%;
+      top: 0;
+      bottom: 0;
       left: 50%;
       z-index: 3;
       grid-column: 1 / -1;
       grid-row: 1;
       width: 70px;
       height: 70px;
-      transform: translate(-50%, -50%);
+      margin-block: auto;
+      transform: translateX(-50%);
       font-size: 15px;
     }
 
@@ -715,6 +717,7 @@
       .vs-large {
         position: relative;
         top: auto;
+        bottom: auto;
         left: auto;
         grid-column: auto;
         grid-row: auto;
