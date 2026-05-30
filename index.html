@@ -197,6 +197,10 @@
       white-space: nowrap;
     }
 
+    .title-line-keep {
+      white-space: nowrap;
+    }
+
     .hero-description {
       max-width: 650px;
       margin: 24px auto 0;
@@ -762,10 +766,10 @@
       }
 
       h1 {
-        font-size: 39px;
+        font-size: clamp(31px, 9vw, 39px);
       }
 
-      .title-line {
+      .title-line:not(.title-line-keep) {
         white-space: normal;
       }
 
@@ -872,7 +876,7 @@
           </span>
           <h1>
             <span class="title-line">경리 직원 1명 채용 비용,</span>
-            <span class="title-line">구독형 재무팀과 비교하세요.</span>
+            <span class="title-line title-line-keep">구독형 재무팀과 비교하세요.</span>
           </h1>
           <p class="hero-description">월급 250만 원만 보면 안 됩니다. 4대보험, 퇴직금, 연차수당, 채용·퇴사 리스크까지 포함하면 실제 고정비는 더 커집니다.</p>
         </div>
@@ -887,8 +891,8 @@
             <div class="compare-head">
               <span class="card-badge muted">직접 채용</span>
               <h3>경리 직원 직접 채용</h3>
-              <div class="price" aria-label="고정비 310만 원">
-                <span class="price-prefix">고정비</span>
+              <div class="price" aria-label="월 고정비 310만 원">
+                <span class="price-prefix">월 고정비</span>
                 <span class="price-number">310</span>
                 <span class="price-unit">만 원</span>
               </div>
