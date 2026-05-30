@@ -21,7 +21,7 @@
       --gray-200: #e8edf4;
       --gray-100: #f3f6fa;
       --white: #ffffff;
-      --red-500: #e23d4d;
+      --amber-600: #d97706;
       --green-500: #10a37f;
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
       --shadow-card: 0 28px 80px rgba(15, 23, 42, 0.12);
@@ -176,9 +176,14 @@
     h1 {
       margin: 0;
       color: var(--navy-950);
-      font-size: clamp(42px, 5vw, 72px);
+      font-size: clamp(40px, 4.4vw, 64px);
       line-height: 1.06;
       font-weight: 920;
+    }
+
+    .title-line {
+      display: block;
+      white-space: nowrap;
     }
 
     .hero-note {
@@ -243,7 +248,7 @@
     }
 
     .hire::after {
-      border: 1px solid rgba(226, 61, 77, 0.1);
+      border: 1px solid rgba(217, 119, 6, 0.08);
     }
 
     .subscription {
@@ -280,8 +285,8 @@
     }
 
     .hire .card-label {
-      color: #b4232f;
-      background: #fff3f4;
+      color: #9a5b05;
+      background: #fff7ed;
     }
 
     .subscription .card-label {
@@ -339,7 +344,7 @@
     }
 
     .hire .metric-number {
-      color: var(--red-500);
+      color: var(--amber-600);
     }
 
     .subscription .metric-number {
@@ -362,7 +367,7 @@
 
     .hire .metric-line span {
       width: 100%;
-      background: linear-gradient(90deg, #ffb4b8, var(--red-500));
+      background: linear-gradient(90deg, #fed7aa, var(--amber-600));
     }
 
     .subscription .metric-line span {
@@ -377,7 +382,7 @@
 
     .feature-list {
       display: grid;
-      gap: 15px;
+      gap: 14px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -390,6 +395,7 @@
       align-items: start;
       color: var(--gray-700);
       font-size: 16px;
+      line-height: 1.45;
       font-weight: 650;
     }
 
@@ -405,8 +411,8 @@
     }
 
     .hire .check {
-      color: #b4232f;
-      background: #fff3f4;
+      color: #9a5b05;
+      background: #fff7ed;
     }
 
     .subscription .check {
@@ -516,7 +522,7 @@
     .work-item {
       display: flex;
       align-items: center;
-      min-height: 64px;
+      min-height: 74px;
       padding: 16px 18px;
       border: 1px solid rgba(216, 224, 234, 0.9);
       border-radius: 16px;
@@ -524,6 +530,7 @@
       background: var(--white);
       box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
       font-size: 15px;
+      line-height: 1.42;
       font-weight: 760;
     }
 
@@ -726,6 +733,10 @@
         font-size: 38px;
       }
 
+      .title-line {
+        white-space: normal;
+      }
+
       .hero-note {
         font-size: 16px;
       }
@@ -825,7 +836,10 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1 id="hero-title">경리 직원 1명 채용 비용,<br>구독형 재무팀과 비교하세요.</h1>
+          <h1 id="hero-title">
+            <span class="title-line">경리 직원 1명 채용 비용,</span>
+            <span class="title-line">구독형 재무팀과 비교하세요.</span>
+          </h1>
           <p class="hero-note">직접 채용의 고정비와 외부 전담 관리 방식의 차이를 숫자로 먼저 확인하세요.</p>
         </div>
 
@@ -834,7 +848,6 @@
             <div class="card-head">
               <div class="card-topline">
                 <span class="card-label">직접 채용</span>
-                <span class="card-caption">월급 외 부대비용 포함</span>
               </div>
               <h2 class="card-title">경리 직원 직접 채용</h2>
               <div class="metric" aria-label="월급 250만 원 기준 고정비 310만 원">
@@ -852,7 +865,7 @@
                 <li><span class="check">!</span><span>월급: 2,500,000원</span></li>
                 <li><span class="check">!</span><span>4대보험 사업자 부담분</span></li>
                 <li><span class="check">!</span><span>퇴직금 적립 부담</span></li>
-                <li><span class="check">!</span><span>연차수당/대체인력 부담</span></li>
+                <li><span class="check">!</span><span>연차수당 및 대체인력 부담</span></li>
                 <li><span class="check">!</span><span>채용·퇴사·인수인계 리스크</span></li>
               </ul>
             </div>
@@ -864,7 +877,6 @@
             <div class="card-head">
               <div class="card-topline">
                 <span class="card-label">구독형 재무팀</span>
-                <span class="card-caption">업무범위에 따라 조정</span>
               </div>
               <h2 class="card-title">우리회사재무팀 구독</h2>
               <div class="metric" aria-label="외부 전담 재무팀 구독 월 80만 원에서 160만 원">
@@ -879,12 +891,14 @@
             </div>
             <div class="card-body">
               <ul class="feature-list">
-                <li><span class="check">✓</span><span>입출금 내역 정리</span></li>
-                <li><span class="check">✓</span><span>매입/매출 자료 관리</span></li>
-                <li><span class="check">✓</span><span>세금계산서 및 증빙자료 관리</span></li>
-                <li><span class="check">✓</span><span>세무대리인 커뮤니케이션 지원</span></li>
-                <li><span class="check">✓</span><span>월간 재무 리포트</span></li>
-                <li><span class="check">✓</span><span>퇴사 리스크 없음</span></li>
+                <li><span class="check">✓</span><span>입출금 내역 관리</span></li>
+                <li><span class="check">✓</span><span>미수금 관리</span></li>
+                <li><span class="check">✓</span><span>세금계산서 발급 및 기타 증빙 관리</span></li>
+                <li><span class="check">✓</span><span>세무법인 연계 신고 지원</span></li>
+                <li><span class="check">✓</span><span>인사관리</span></li>
+                <li><span class="check">✓</span><span>재무 리포트</span></li>
+                <li><span class="check">✓</span><span>국가지원사업 정산</span></li>
+                <li><span class="check">✓</span><span>퇴사리스크 없음</span></li>
               </ul>
             </div>
           </article>
@@ -926,14 +940,14 @@
           <p>대표가 직접 챙기기 어려운 자료 정리와 커뮤니케이션을 담당자 기반으로 운영합니다.</p>
         </div>
         <div class="work-grid">
-          <div class="work-item">입출금 내역 정리</div>
-          <div class="work-item">매입/매출 자료 관리</div>
-          <div class="work-item">비용 분류</div>
-          <div class="work-item">미수/미지급 체크</div>
-          <div class="work-item">세금계산서 및 증빙자료 관리</div>
-          <div class="work-item">세무대리인 커뮤니케이션 지원</div>
-          <div class="work-item">신고 준비자료 정리</div>
-          <div class="work-item">월간 재무 리포트</div>
+          <div class="work-item">입출금 내역 관리</div>
+          <div class="work-item">미수금 관리</div>
+          <div class="work-item">세금계산서 발급 및 기타 증빙 관리</div>
+          <div class="work-item">세무법인 연계 신고 지원</div>
+          <div class="work-item">인사관리</div>
+          <div class="work-item">재무 리포트</div>
+          <div class="work-item">국가지원사업 정산</div>
+          <div class="work-item">개별 법인에 따른 기타 업무 가능</div>
         </div>
       </div>
     </section>
