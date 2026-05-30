@@ -288,6 +288,8 @@
       top: 50%;
       left: 50%;
       z-index: 3;
+      grid-column: 1 / -1;
+      grid-row: 1;
       width: 70px;
       height: 70px;
       transform: translate(-50%, -50%);
@@ -714,7 +716,9 @@
         position: relative;
         top: auto;
         left: auto;
-        margin: -4px auto;
+        grid-column: auto;
+        grid-row: auto;
+        margin: -2px auto;
         transform: none;
       }
 
